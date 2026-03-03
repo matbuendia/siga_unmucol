@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AgendaScreen extends StatelessWidget {
-  const AgendaScreen({super.key});
+class PlannerScreen extends StatelessWidget {
+  const PlannerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AgendaScreen extends StatelessWidget {
           Opacity(
             opacity: 0.5,
             child: Image.asset(
-              'assets/images/plantillaagenda.png',
+              'assets/images/plantillaplanner.png',
               width: 1000,
               height: 1000,
               fit: BoxFit.cover,
