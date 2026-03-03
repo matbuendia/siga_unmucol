@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'screens/pantalla_curso.dart';
+import 'screens/login_screen.dart';
+import 'screens/curse_screen.dart';
+import 'screens/agenda_screen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: 'Mi proyecto',
 
-      home: const PantallaCurso(),
+      home: const LoginScreen(),
     );
   }
 }
