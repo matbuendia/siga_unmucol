@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PantallaCurso extends StatelessWidget{
-  const PantallaCurso({super.key});
+class CurseScreen extends StatelessWidget{
+  const CurseScreen({super.key});
 
   @override
   Widget build(BuildContext context){
