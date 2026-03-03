@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/pantalla_curso.dart';
+import 'screens/curse_screen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: 'Mi proyecto',
 
-      home: const PantallaCurso(),
+      home: const CurseScreen(),
     );
   }
 }
