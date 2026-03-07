@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: 'Mi proyecto',
 
-      home: const LoginScreen(),
+      home: const PlannerScreen(),
     );
   }
 }
