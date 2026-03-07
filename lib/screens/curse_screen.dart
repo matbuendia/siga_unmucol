@@ -21,7 +21,7 @@ class CurseScreen extends StatelessWidget{
 
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage('https://i.pinimg.com/736x/00/77/80/00778091f156323e85e4506bcc6b2cf2.jpg'),
+            image: AssetImage('assets/images/fondoblanco.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -41,7 +41,7 @@ class CurseScreen extends StatelessWidget{
               color: Colors.blueAccent,
               borderRadius: BorderRadius.circular(15), //redondear esquinas
               image: DecorationImage( 
-                image: const NetworkImage('https://i.pinimg.com/736x/0b/6e/88/0b6e881b001b3427d07d21c249937dbe.jpg'),
+                image: const AssetImage('assets/images/imagenmatematicas.jpg'),
                 fit: BoxFit.cover,
                 
                 colorFilter: ColorFilter.mode(
@@ -82,7 +82,7 @@ class CurseScreen extends StatelessWidget{
               borderRadius: BorderRadius.circular(15), //redondear esquinas
 
               image: DecorationImage(
-                image: const NetworkImage('https://i.pinimg.com/736x/81/d0/44/81d044473d7ab0a3cac50fa58dc12a90.jpg'),
+                image: const AssetImage('assets/images/imagenlenguaje.jpg'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.5), 
