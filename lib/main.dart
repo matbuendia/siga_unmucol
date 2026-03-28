@@ -22,9 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Mi proyecto',
+      title: 'SIGA UNMUCOL',
 
-      home: const LoginScreen(),
+      // 3. Define la pantalla inicial
+      initialRoute: '/',
+
+      // 4. El "Mapa de Navegación" por nombres
+      routes: {
+        '/': (context) => const LoginScreen(),
+        '/planner': (context) => const PlannerScreen(),
+        '/admin_panel': (context) => const AdminScreen(),
+      },
     );
   }
 }
