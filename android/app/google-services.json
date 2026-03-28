@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "271243528011",
+    "project_id": "sigaunmucol",
+    "storage_bucket": "sigaunmucol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271243528011:android:dc0aaf2f5a0eb788b34ace",
+        "android_client_info": {
+          "package_name": "com.example.siga_unmucol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9vSnvFTAbspFCmjcZp997oCFE0PAJ_3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

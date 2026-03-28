@@ -43,3 +43,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase logs y configuración sensible
+firebase-debug.log
+.firebaserc
+# lib/firebase_options.dart # Descomenta esta línea si el repo será público
+
+# Archivos temporales de Linux/Fedora
+*~
+.fuse_hidden*
+.directory
+.Trash-*
