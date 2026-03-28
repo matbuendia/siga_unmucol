@@ -47,7 +47,7 @@ app.*.map.json
 # Firebase logs y configuración sensible
 firebase-debug.log
 .firebaserc
-# lib/firebase_options.dart # Descomenta esta línea si el repo será público
+lib/firebase_options.dart # Descomenta esta línea si el repo será público
 
 # Archivos temporales de Linux/Fedora
 *~
