@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:siga_unmucol/screens/students_screens/grades_screen.dart';
 import 'package:siga_unmucol/screens/students_screens/planner_screen.dart';
+import 'package:siga_unmucol/screens/students_screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = const [GradesScreen(), PlannerScreen()];
+  final List<Widget> _screens = const [
+    GradesScreen(),
+    PlannerScreen(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.calendar_today),
             label: 'Planner',
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
       ),
     );
