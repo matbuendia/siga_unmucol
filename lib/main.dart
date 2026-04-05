@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-//import 'screens/login_screen.dart';
+import 'screens/login_screen.dart';
 import 'screens/students_screens/planner_screen.dart';
-//import 'screens/students_screens/curse_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/students_screens/grades_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Mi proyecto',
-
-      home: const PlannerScreen(),
+      title: 'SIGA UNMUCOL',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }
