@@ -11,7 +11,7 @@ class PlannerScreen extends StatelessWidget {
         backgroundColor: const Color(0xFFF5F0FF),
         elevation: 0,
         title: const Text(
-          'Agenda',
+          'Planner',
           style: TextStyle(
             color: Color(0xFF6A1B9A),
             fontWeight: FontWeight.bold,
@@ -204,7 +204,7 @@ children: [
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
-            label: 'Agenda',
+            label: 'Planner',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
