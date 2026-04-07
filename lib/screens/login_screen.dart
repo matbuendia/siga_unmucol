@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:siga_unmucol/services/api_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,17 +22,26 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  void _handleLogin() {
+  void _handleLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
-
-      // Navegación temporal mientras Miguel termina la API
-      Future.delayed(const Duration(seconds: 1), () {
+      try {
+        await ApiService.login(
+          _emailController.text,
+          _passwordController.text,
+        );
         if (mounted) {
           setState(() => _isLoading = false);
           Navigator.pushReplacementNamed(context, '/home');
         }
-      });
+      } catch (e) {
+        if (mounted) {
+          setState(() => _isLoading = false);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString())),
+          );
+        }
+      }
     }
   }
 

@@ -1,12 +1,2 @@
-# Entorno virtual
-venv/
-
-# Variables de entorno
-.env
-
-# Cache de Python
-__pycache__/
-*.pyc
-
-# VS Code
-.vscode/
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
