@@ -39,7 +39,18 @@ class Grade(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     enrollment_id = Column(UUID(as_uuid=True), ForeignKey("enrollments.id"))
     periodo = Column(Integer, nullable=False)
-    nota_final = Column(Numeric(3, 1), nullable=False)
+    nota_final = Column(Numeric(4, 2), nullable=True)  
+    periodo_cerrado = Column(Boolean, default=False)
+    
+class GradeActivity(Base):
+    __tablename__ = "grade_activities"
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    enrollment_id = Column(UUID(as_uuid=True), ForeignKey("enrollments.id"))
+    periodo = Column(Integer, nullable=False)          
+    tipo = Column(String, nullable=False)              
+    descripcion = Column(String, nullable=True)     
+    valor = Column(Numeric(4, 2), nullable=False)
+    created_at = Column(DateTime, server_default=func.now())
 
 class Event(Base):
     __tablename__ = "events"

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from database import engine, Base
-from routers import auth, users
+from routers import auth, users, grades, events
 
 Base.metadata.create_all(bind=engine)
 
@@ -8,6 +8,8 @@ app = FastAPI(title="SIGA UNMUCOL API")
 
 app.include_router(auth.router)
 app.include_router(users.router)
+app.include_router(grades.router)
+app.include_router(events.router)
 
 @app.get("/")
 def root():

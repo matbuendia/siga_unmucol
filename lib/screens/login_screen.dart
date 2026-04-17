@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:siga_unmucol/services/api_service.dart';
+import 'package:siga_unmucol/services/session_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,13 +27,33 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
       try {
-        await ApiService.login(
+        final response = await ApiService.login(
           _emailController.text,
           _passwordController.text,
         );
+        await SessionService.saveSession(
+          userId: response['user_id'],
+          token: response['access_token'],
+          rol: response['rol'],
+          nombre: response['nombre'],
+        );
         if (mounted) {
           setState(() => _isLoading = false);
-          Navigator.pushReplacementNamed(context, '/home');
+          Navigator.pushReplacementNamed(context, '/router');
+          final rol = response['rol'];
+if (rol != 'student') {
+  await SessionService.clearSession();
+  if (mounted) {
+    setState(() => _isLoading = false);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Esta app es solo para estudiantes'),
+        backgroundColor: Color(0xFFC62828),
+      ),
+    );
+  }
+  return;
+}
         }
       } catch (e) {
         if (mounted) {

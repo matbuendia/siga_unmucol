@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:siga_unmucol/config/api_config.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://10.0.2.2:8000';
+  static const String baseUrl = ApiConfig.baseUrl;
 
   static Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await http.post(
@@ -28,6 +29,32 @@ class ApiService {
       return jsonDecode(response.body);
     } else {
       throw Exception('Error al obtener estudiantes');
+    }
+  }
+  
+  static Future<Map<String, dynamic>> getGrades(String studentId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/grades/student/$studentId'),
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Error al obtener calificaciones');
+    }
+  }
+
+  static Future<List<dynamic>> getEvents(String studentId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/events/student/$studentId'),
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Error al obtener eventos');
     }
   }
 }
